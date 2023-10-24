@@ -26,7 +26,7 @@ def encoder(arr):
     return int(arr_str)
 
 
-def decoder(encoded):
+def decode(encoded):
     # creates a list of the digits in the encoded password
     encoded_list = list(str(encoded))
     decoded = []
@@ -34,7 +34,10 @@ def decoder(encoded):
     # iterates through the encoded digits and subtracts 3
     # adds the new digits to the decoded list
     for item in encoded_list:
-        decoded.append(str(int(item) - 3))
+        if (int(item) - 3 >= 0):
+            decoded.append(str(int(item) - 3))
+        else:
+            decoded.append(str(int(item) - 3 + 10))
 
     # makes the decoded list into a string and then casts to an integer
     decoded_str = ''.join(decoded)
@@ -64,7 +67,7 @@ if __name__ == '__main__':
             print('Your password has been encoded and stored!')
 
         elif (select == SELECTION_DECODE):
-            print(f'The encoded password is {pswd_encoded}, and the original password is {decoder(pswd_encoded)}.')
+            print(f'The encoded password is {pswd_encoded}, and the original password is {decode(pswd_encoded)}.')
 
         else:  # option 3 -- assumes no invalid inputs
             break
