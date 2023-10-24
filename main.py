@@ -1,5 +1,5 @@
 # Lab 6 -- Author: Paul Chojecki
-# Group 65: Paul Chojecki (owner) and Jaycie Nguyen (partner)
+# Group 38: Paul Chojecki (owner) and Divya Puthanveetil (partner)
 # 10/19/2023
 
 # initialize constants
