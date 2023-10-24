@@ -26,6 +26,20 @@ def encoder(arr):
     return int(arr_str)
 
 
+def decoder(encoded):
+    # creates a list of the digits in the encoded password
+    encoded_list = list(str(encoded))
+    decoded = []
+
+    # iterates through the encoded digits and subtracts 3
+    # adds the new digits to the decoded list
+    for item in encoded_list:
+        decoded.append(str(int(item) - 3))
+
+    # makes the decoded list into a string and then casts to an integer
+    decoded_str = ''.join(decoded)
+    return int(decoded_str)
+
 
 def print_menu():
     print('Menu')
@@ -41,20 +55,18 @@ if __name__ == '__main__':
 
     pswd = None
     pswd_encoded = None
-    while(True):
+    while (True):
         select = int(input('Please enter an option: '))
 
-
-        if(select == SELECTION_ENCODE): # option 1 -- encode
+        if (select == SELECTION_ENCODE):  # option 1 -- encode
             pswd = int(input('Please enter your password to encode: '))
             pswd_encoded = encoder(pswd)
             print('Your password has been encoded and stored!')
 
-        elif(select == SELECTION_DECODE):
+        elif (select == SELECTION_DECODE):
             print(f'The encoded password is {pswd_encoded}, and the original password is {decoder(pswd_encoded)}.')
 
-        else: # option 3 -- assumes no invalid inputs
+        else:  # option 3 -- assumes no invalid inputs
             break
 
         print_menu()
-
