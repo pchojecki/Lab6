@@ -8,7 +8,7 @@ SELECTION_DECODE = 2
 SELECTION_QUIT = 3
 
 
-def encoder(arr):
+def encode(arr):
     '''
     :param arr: integer representing password
     :return: returns encoded password
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 
         if (select == SELECTION_ENCODE):  # option 1 -- encode
             pswd = int(input('Please enter your password to encode: '))
-            pswd_encoded = encoder(pswd)
+            pswd_encoded = encode(pswd)
             print('Your password has been encoded and stored!')
 
         elif (select == SELECTION_DECODE):
